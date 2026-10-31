@@ -1,7 +1,7 @@
 {
   "id": "diagrams",
   "name": "Diagrams",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Diagrams integration for Saturn.",
   "badge": "DG",
   "saturnApi": "^1.0",
@@ -11,7 +11,6 @@
       {
         "id": "diagrams",
         "name": "Diagrams",
-        "description": "Boards of shapes and arrows, kept as plain files.",
         "icon": "icon.svg",
         "marker": "diagrams.json"
       }
