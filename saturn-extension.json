@@ -2,7 +2,7 @@
   "id": "diagrams",
   "name": "Diagrams",
   "version": "1.0.0",
-  "description": "Diagrams and whiteboards kept as plain, git-friendly files.",
+  "description": "Diagrams integration for Saturn.",
   "badge": "DG",
   "saturnApi": "^1.0",
   "main": "extension.js",
