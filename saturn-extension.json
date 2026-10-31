@@ -1,7 +1,7 @@
 {
   "id": "diagrams",
   "name": "Diagrams",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Diagrams integration for Saturn.",
   "badge": "DG",
   "saturnApi": "^1.0",
