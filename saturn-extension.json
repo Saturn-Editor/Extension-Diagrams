@@ -1,0 +1,38 @@
+{
+  "id": "diagrams",
+  "name": "Diagrams",
+  "version": "1.0.0",
+  "description": "Diagrams and whiteboards kept as plain, git-friendly files.",
+  "badge": "DG",
+  "saturnApi": "^1.0",
+  "main": "extension.js",
+  "contributes": {
+    "projectTypes": [
+      {
+        "id": "diagrams",
+        "name": "Diagrams",
+        "description": "Boards of shapes and arrows, kept as plain files.",
+        "icon": "icon.svg",
+        "marker": "diagrams.json"
+      }
+    ],
+    "panels": [
+      { "id": "diagrams.boards", "title": "Boards", "dock": "left", "kind": "tree", "icon": "icon.svg", "showWhen": ["diagrams.json"] }
+    ],
+    "documents": [
+      {
+        "id": "diagrams.board",
+        "label": "Diagram",
+        "extensions": [".diagram"]
+      }
+    ],
+    "commands": [
+      { "id": "diagrams.newBoard", "title": "Diagram: New Board…", "when": { "projectType": "diagrams" } },
+      { "id": "diagrams.import", "title": "Diagram: Import Mermaid or PlantUML…" },
+      { "id": "diagrams.exportSvg", "title": "Diagram: Export as SVG…", "when": { "document": "diagrams.board" } },
+      { "id": "diagrams.exportPng", "title": "Diagram: Export as PNG…", "when": { "document": "diagrams.board" } },
+      { "id": "diagrams.copyPng", "title": "Diagram: Copy as Image", "when": { "document": "diagrams.board" } },
+      { "id": "diagrams.zoomToFit", "title": "Diagram: Zoom to Fit", "when": { "document": "diagrams.board" } }
+    ]
+  }
+}

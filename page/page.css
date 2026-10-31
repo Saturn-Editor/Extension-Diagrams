@@ -1,0 +1,228 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--saturn-editor);
+  color: var(--saturn-text);
+  font: 13px system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 6px;
+  background: var(--saturn-panel);
+  border-bottom: 1px solid var(--saturn-divider);
+}
+
+#toolbar .sep {
+  width: 1px;
+  height: 18px;
+  margin: 0 4px;
+  background: var(--saturn-divider);
+}
+
+#toolbar button {
+  min-width: 26px;
+  height: 26px;
+  padding: 0 7px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--saturn-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+#toolbar button:hover:not(:disabled) {
+  background: var(--saturn-hover);
+}
+
+#toolbar button.on {
+  background: var(--saturn-selection);
+  border-color: var(--saturn-accent);
+  color: var(--saturn-strong);
+}
+
+#toolbar button:disabled {
+  color: var(--saturn-muted);
+  cursor: default;
+}
+
+#toolbar button.swatch {
+  min-width: 18px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 0 1px;
+  border: 1px solid var(--saturn-border);
+}
+
+#toolbar .zoom {
+  min-width: 42px;
+  text-align: center;
+  color: var(--saturn-muted);
+}
+
+#main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+#palette {
+  width: 172px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  padding: 6px;
+  box-sizing: border-box;
+  background: var(--saturn-panel);
+  border-right: 1px solid var(--saturn-divider);
+  user-select: none;
+}
+
+#palette button {
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--saturn-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+#palette button:hover:not(:disabled) {
+  background: var(--saturn-hover);
+}
+
+#palette button.on {
+  background: var(--saturn-selection);
+  border-color: var(--saturn-accent);
+  color: var(--saturn-strong);
+}
+
+#palette button:disabled {
+  color: var(--saturn-muted);
+  cursor: default;
+}
+
+#palette svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+#palette .tool {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 30px;
+  padding: 0 6px;
+  margin-bottom: 4px;
+}
+
+#palette .heading {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 6px 2px 4px;
+  color: var(--saturn-muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+#palette .heading:hover:not(:disabled) {
+  background: transparent;
+  color: var(--saturn-text);
+}
+
+#palette .chevron {
+  width: 10px;
+}
+
+#palette .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+#palette .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  cursor: grab;
+}
+
+#stage {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  background-image: radial-gradient(var(--saturn-divider) 1px, transparent 1px);
+  touch-action: none;
+  outline: none;
+}
+
+#canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+#stage.pan, #stage.pan * {
+  cursor: grab !important;
+}
+
+#stage.draw {
+  cursor: crosshair;
+}
+
+#canvas [data-kind] {
+  cursor: pointer;
+}
+
+#canvas [data-handle] {
+  cursor: nwse-resize;
+}
+
+#editor {
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px;
+  border: 1px solid var(--saturn-accent);
+  border-radius: 0;
+  background: var(--saturn-editor);
+  color: var(--saturn-text);
+  font-family: inherit;
+  text-align: center;
+  resize: none;
+  outline: none;
+  overflow: hidden;
+}
+
+#problem {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  color: var(--saturn-error);
+  background: var(--saturn-editor);
+}
